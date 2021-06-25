@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import mockResponse from './dynamic-rendering/dynamic-rendering.mock';
+import { createPage } from './dynamic-rendering';
+import "./styles/index.scss"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="my-3">
+      <div className="ms-4 mb-3">
+        <h1 className="display-3">
+          All the items below this title are being dynamically rendered
+        </h1>
+      </div>
+      {createPage(mockResponse)}
     </div>
   );
 }
